@@ -35,6 +35,7 @@ jobs:
         env:
           # Relative asset URLs work on both the default project URL and custom domains.
           BASE_PATH: ./
+          VITE_CDN_ASSET_BASE: https://cdn.jsdelivr.net/gh/${{ github.repository }}@${{ github.sha }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

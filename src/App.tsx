@@ -19,9 +19,16 @@ import {
   Users,
   X,
 } from "lucide-react";
-import heroImage from "../assets/images/首页图片.png";
-import ucasSlide from "../assets/images/ucas_slide.png";
-import bgiSlide from "../assets/images/bgi_slide.png";
+
+const cdnAssetBase = import.meta.env.VITE_CDN_ASSET_BASE;
+const assetUrl = (path: string) =>
+  cdnAssetBase
+    ? `${cdnAssetBase}/${path}`
+    : `${import.meta.env.BASE_URL}${path}`;
+
+const heroAsset = assetUrl("assets/images/web/首页图片.webp");
+const ucasSlide = assetUrl("assets/images/ucas_slide.png");
+const bgiSlide = assetUrl("assets/images/bgi_slide.png");
 
 const notice = "学生整理，非官方信息，仅供参考；请以当年官方招生文件为准。";
 
@@ -491,7 +498,7 @@ export default function App() {
       >
         <section
           className="hero"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          style={{ backgroundImage: `url(${heroAsset})` }}
         >
           <div className="hero-shade" />
           <div className="hero-caption">
@@ -519,8 +526,8 @@ export default function App() {
 
         <div className="content-stage">
           <div className="content-side-rails" aria-hidden="true">
-            <img src={ucasSlide} alt="" />
-            <img src={bgiSlide} alt="" />
+            <img src={ucasSlide} alt="" loading="lazy" decoding="async" />
+            <img src={bgiSlide} alt="" loading="lazy" decoding="async" />
           </div>
           <div className="content-main">
             <div className="platform-cards">
