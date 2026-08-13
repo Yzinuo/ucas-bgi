@@ -898,7 +898,7 @@ export default function App() {
                   </div>
                   <a
                     className="community-join"
-                    href="https://qun.qq.com/join.html?gc=946372576"
+                    href="https://qm.qq.com/q/dZmGc3XFkI"
                     target="_blank"
                     rel="noreferrer"
                   >
